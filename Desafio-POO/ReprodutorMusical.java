@@ -1,56 +1,24 @@
-public class iPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
-    private ReprodutorMusical reprodutorMusical;
-    private AparelhoTelefonico aparelhoTelefonico;
-    private NavegadorInternet navegadorInternet;
+public interface ReprodutorMusical {
+    void tocar();
+    void pausar();
+    void selecionarMusica();
+}
 
-    public iPhone() {
-        this.reprodutorMusical = new ReprodutorMusicalImpl();
-        this.aparelhoTelefonico = new AparelhoTelefonicoImpl();
-        this.navegadorInternet = new NavegadorInternetImpl();
+// ReprodutorMusicalImpl.java
+
+public class ReprodutorMusicalImpl implements ReprodutorMusical {
+    @Override
+    public void tocar() {
+        // Implementação para tocar música
     }
 
     @Override
-    public void tocarMusica() {
-        reprodutorMusical.tocar();
-    }
-
-    @Override
-    public void pausarMusica() {
-        reprodutorMusical.pausar();
+    public void pausar() {
+        // Implementação para pausar música
     }
 
     @Override
     public void selecionarMusica() {
-        reprodutorMusical.selecionarMusica();
-    }
-
-    @Override
-    public void fazerChamada() {
-        aparelhoTelefonico.fazerChamada();
-    }
-
-    @Override
-    public void atenderChamada() {
-        aparelhoTelefonico.atenderChamada();
-    }
-
-    @Override
-    public void iniciarGravacaoVoz() {
-        aparelhoTelefonico.iniciarGravacaoVoz();
-    }
-
-    @Override
-    public void exibirPagina() {
-        navegadorInternet.exibirPagina();
-    }
-
-    @Override
-    public void adicionarNovaAba() {
-        navegadorInternet.adicionarNovaAba();
-    }
-
-    @Override
-    public void atualizarPagina() {
-        navegadorInternet.atualizarPagina();
+        // Implementação para selecionar música
     }
 }
